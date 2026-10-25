@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0d0c0a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>Veyra: Crystal Wars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="game"></div>
+<div id="overlay"></div>
+
+<!-- HUD -->
+<div id="hud" class="hidden">
+  <div id="pframe" class="panel">
+    <div class="pname"><span id="hName"></span> <small id="hClass"></small></div>
+    <div class="bar hp"><i id="hHp"></i><span id="hHpT"></span></div>
+    <div class="bar mp"><i id="hMp"></i><span id="hMpT"></span></div>
+    <div class="money"><span title="Credit">◎ <b id="hCredit"></b></span> <span title="Core Shard">◆ <b id="hShard"></b></span> <span id="hMode"></span></div>
+    <div id="hBuffs" class="buffs"></div>
+  </div>
+  <div id="tframe" class="panel hidden">
+    <div class="pname" id="tName"></div>
+    <div class="bar hp"><i id="tHp"></i><span id="tHpT"></span></div>
+    <div id="tBuffs" class="buffs"></div>
+  </div>
+  <div id="mapbox" class="panel">
+    <div id="zoneName"></div>
+    <canvas id="minimap" width="180" height="180"></canvas>
+    <div id="warBox"></div>
+  </div>
+  <div id="questTrack" class="panel"></div>
+  <div id="chat" class="panel">
+    <div id="chatTabs"><button data-f="all" class="on">Semua</button><button data-f="sys">Sistem</button><button data-f="loot">Loot</button><button data-f="world">Dunia</button></div>
+    <div id="chatLog"></div>
+    <input id="chatIn" placeholder="Enter untuk chat · /help" maxlength="120">
+  </div>
+  <div id="bottom">
+    <div id="cast" class="hidden"><i></i><span>Mengumpulkan…</span></div>
+    <div id="hotbar"></div>
+    <div class="bar xp"><i id="hXp"></i><span id="hXpT"></span></div>
+    <div id="menuBtns">
+      <button data-w="inventory" title="Inventaris (I)">🎒<small>I</small></button>
+      <button data-w="character" title="Karakter (C)">🧍<small>C</small></button>
+      <button data-w="skills" title="Skill (K)">✦<small>K</small></button>
+      <button data-w="quests" title="Quest (L)">📜<small>L</small></button>
+      <button data-w="travel" title="Peta / Teleport (M)">🗺<small>M</small></button>
+      <button data-w="system" title="Menu (Esc)">⚙<small>Esc</small></button>
+    </div>
+  </div>
+  <div id="toast"></div>
+</div>
+
+<div id="windows"></div>
+<div id="screen"></div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
